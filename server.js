@@ -17,7 +17,7 @@ const { getAllThemes, addSet, editSet, getSetByNum, deleteSet} = require('./modu
 
 const app = express();
 /*const PORT = 3000;*/
-
+const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
@@ -116,5 +116,5 @@ app.use((req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
